@@ -17,4 +17,6 @@ public interface JobPositionService {
 	Result update(JobPosition jobPosition);
 
 	Result delete(JobPosition jobPosition);
+	
+	DataResult<JobPosition>getByJobTitle(String jobTitle);
 }
