@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import io.hrms.entities.concretes.VerificationCode;
 
-public interface VertificationCodeDao extends JpaRepository<VerificationCode, Integer> {
+public interface VerificationCodeDao extends JpaRepository<VerificationCode, Integer> {
 
 }

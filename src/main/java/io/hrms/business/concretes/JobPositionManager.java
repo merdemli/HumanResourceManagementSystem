@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import io.hrms.business.abstracts.JobPositionService;
+import io.hrms.core.utilities.results.SuccessDataResult;
 import io.hrms.dataAccess.abstracts.JobPositionDao;
 import io.hrms.entities.concretes.JobPosition;
 
@@ -25,7 +26,7 @@ public class JobPositionManager implements JobPositionService
 	public List<JobPosition> getAll()
 	{
 		
-		return jobPositionDao.findAll();
+		return SuccessDataResult
 	}
 
 }
