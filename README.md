@@ -1,7 +1,7 @@
 # HumanResourceManagementSystem.JavaBackend
 Java.SpringBoot- Backend for Human Resource Management System
 
-# HumanResourceManagementSystem
+
 
 # HRMS Project with Spring Boot & React
 
@@ -14,5 +14,5 @@ Java.SpringBoot- Backend for Human Resource Management System
 - `Spring Web`&emsp;&emsp;&emsp;&emsp;&emsp; `Swagger` &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;`Lombok` 
 <br> <img src="https://2.bp.blogspot.com/-4FdDAKjbAvU/Vpvr1Rl9YfI/AAAAAAAABk0/U-VeLoHK7uo/s1600/photo.jpg" width="75" height="75"/>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src="https://help.apiary.io/images/swagger-logo.png" width="75" height="75"/>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src="https://www.javanibble.com/assets/images/feature-images/feature-image-lombok.png" width="150" height="75"/>
 
-![image](https://github.com/merdemli/HumanResourceManagementSystem.JavaBackend/edit/HRMS/README.md)
+![image](https://github.com/merdemli/HRMS.PostgreSQL/blob/main/ERD_Diagram.png)
 
