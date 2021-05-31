@@ -2,6 +2,9 @@ package io.hrms.business.concretes;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import io.hrms.business.abstracts.UserService;
 import io.hrms.core.utilities.results.DataResult;
 import io.hrms.core.utilities.results.Result;
@@ -10,10 +13,12 @@ import io.hrms.core.utilities.results.SuccessResult;
 import io.hrms.dataAccess.abstracts.UserDao;
 import io.hrms.entities.concretes.User;
 
+@Service
 public class UserManager implements UserService {
 	
 	private UserDao userDao;
 
+	@Autowired
 	public UserManager(UserDao userDao) {
 		super();
 		this.userDao = userDao;

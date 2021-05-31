@@ -18,5 +18,7 @@ public interface JobSeekerService {
 	Result update(JobSeeker jobSeeker);
 
 	DataResult<JobSeeker> getByDateOfBirth(LocalDate dateOfBirth);
+	
+	DataResult<JobSeeker> getByNationalId(String nationalId);
 
 }
