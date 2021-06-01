@@ -13,9 +13,9 @@ public interface JobSeekerService {
 
 	Result add(JobSeeker jobSeeker);
 
-	Result delete(JobSeeker jobSeeker);
-
-	Result update(JobSeeker jobSeeker);
+//	Result delete(JobSeeker jobSeeker);
+//
+//	Result update(JobSeeker jobSeeker);
 
 	DataResult<JobSeeker> getByDateOfBirth(LocalDate dateOfBirth);
 	

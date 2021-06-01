@@ -13,10 +13,10 @@ public interface UserService {
 	DataResult<User> findByEmail(String email);
 
 	Result add(User user);
-
-	Result update(User user);
-
-	Result delete(User user);
+//
+//	Result update(User user);
+//
+//	Result delete(User user);
 
 	DataResult<User> getById(int id);
 

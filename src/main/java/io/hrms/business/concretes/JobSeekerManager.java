@@ -40,17 +40,17 @@ public class JobSeekerManager implements JobSeekerService {
 		return new SuccessResult("saved to DB");
 	}
 
-	@Override
-	public Result delete(JobSeeker jobSeeker) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Result update(JobSeeker jobSeeker) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+//	@Override
+//	public Result delete(JobSeeker jobSeeker) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//
+//	@Override
+//	public Result update(JobSeeker jobSeeker) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 
 	@Override
 	public DataResult<JobSeeker> getByDateOfBirth(LocalDate dateOfBirth) {

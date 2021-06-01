@@ -44,16 +44,16 @@ public class EmployerManager implements EmployerService{
 	}
 //
 
-	@Override
-	public Result delete(Employer employer) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Result update(Employer employer) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+//	@Override
+//	public Result delete(Employer employer) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//
+//	@Override
+//	public Result update(Employer employer) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 
 }

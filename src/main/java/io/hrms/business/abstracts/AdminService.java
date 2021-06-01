@@ -10,9 +10,9 @@ public interface AdminService {
 
 	Result add(Admin admin);
 
-	Result delete(Admin admin);
-
-	Result update(Admin admin);
+//	Result delete(Admin admin);
+//
+//	Result update(Admin admin);
 
 	DataResult<List<Admin>> getAll();
 

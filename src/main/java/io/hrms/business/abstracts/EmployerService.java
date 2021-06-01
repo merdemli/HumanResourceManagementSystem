@@ -14,8 +14,8 @@ public interface EmployerService {
 
 	Result add(Employer employer);
 
-	Result delete(Employer employer);
-
-	Result update(Employer employer);
+//	Result delete(Employer employer);
+//
+//	Result update(Employer employer);
 
 }

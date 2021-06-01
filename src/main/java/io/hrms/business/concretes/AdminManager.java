@@ -29,17 +29,17 @@ public class AdminManager implements AdminService{
 		return null;
 	}
 
-	@Override
-	public Result delete(Admin admin) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Result update(Admin admin) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+//	@Override
+//	public Result delete(Admin admin) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//
+//	@Override
+//	public Result update(Admin admin) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 
 	@Override
 	public DataResult<List<Admin>> getAll() {

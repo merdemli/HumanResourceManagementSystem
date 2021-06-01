@@ -41,19 +41,19 @@ public class UserManager implements UserService {
 		this.userDao.save(user);
 		return new SuccessResult("user has been successfully added");
 	}
-    @Override
-	public Result update(User user) {
-		this.userDao.save(user);
-		return new SuccessResult("user has been successfully updated");
-		
-
-	}
-
-	@Override
-	public Result delete(User user) {
-		this.userDao.delete(user);
-		return new SuccessResult("users has been successfully deleted");
-	}
+//    @Override
+//	public Result update(User user) {
+//		this.userDao.save(user);
+//		return new SuccessResult("user has been successfully updated");
+//		
+//
+//	}
+//
+//	@Override
+//	public Result delete(User user) {
+//		this.userDao.delete(user);
+//		return new SuccessResult("users has been successfully deleted");
+//	}
 
 	@Override
 	public DataResult<User> getById(int id) {

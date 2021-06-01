@@ -1,10 +1,12 @@
 package io.hrms.mernisService;
 
+import io.hrms.entities.concretes.JobSeeker;
+
 public class FakeMernisValidationService {
 	
-	public boolean ValidatePerson(long nationalId, String firstName, String lastName, int yearOfBirth) {
+	public boolean validatePerson(JobSeeker jobSeeker) {
 		
-		System.out.println(firstName+ " " +lastName+ " is valid person");
+		
 		
 		return true;
 	}

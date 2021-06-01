@@ -8,8 +8,7 @@ import io.hrms.business.abstracts.AuthService;
 import io.hrms.business.abstracts.EmployerService;
 import io.hrms.business.abstracts.JobSeekerService;
 import io.hrms.business.abstracts.UserService;
-
-import io.hrms.core.utilities.adapters.abstracts.ValidatePersonService;
+import io.hrms.core.utilities.adapters.ValidatePersonService;
 import io.hrms.core.utilities.results.ErrorDataResult;
 import io.hrms.core.utilities.results.ErrorResult;
 import io.hrms.core.utilities.results.Result;
@@ -39,6 +38,7 @@ public class AuthManager implements AuthService {
 		this.validatePersonService = validatePersonService;
 	}
 
+	
 	@Override
 	public Result registerForEmployer(Employer employer, String password) {
 
@@ -75,9 +75,10 @@ public class AuthManager implements AuthService {
 	@Override
 	public Result registerForJobSeeker(JobSeeker jobSeeker, String password) {
 		
-		if(CheckIfMernisPerson(Long.parseLong(jobSeeker.getNationalId()), jobSeeker.getFirstName(),
-				jobSeeker.getLastName(), jobSeeker.getDateOfBirth().getYear()) == false)
+		if(!CheckIfMernisPerson(jobSeeker))
 		{return new ErrorResult("not verified by the mernis system");}
+		
+		
 		
 		if(!checkIfExistNationalId(jobSeeker.getNationalId())) {
 			
@@ -121,9 +122,9 @@ public class AuthManager implements AuthService {
 	}
 	
 	
-	private boolean CheckIfMernisPerson(long nationalId, String fistName, String lastName, int YearOfBirth) {
+	private boolean CheckIfMernisPerson(JobSeeker jobSeeker) {
 		
-		if(validatePersonService.CheckIfRealPerson(nationalId, fistName, lastName, YearOfBirth)) {
+		if(validatePersonService.CheckIfRealPerson(jobSeeker)) {
 			return true;
 		}
 		else return false;

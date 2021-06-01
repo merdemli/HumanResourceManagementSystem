@@ -51,17 +51,17 @@ public class JobPositionManager implements JobPositionService
 		
 	}
 
-	@Override
-	public Result update(JobPosition jobPosition) {
-		this.jobPositionDao.save(jobPosition );
-		return new SuccessResult("Job position has been updated");
-	}
-
-	@Override
-	public Result delete(JobPosition jobPosition) {
-		this.jobPositionDao.delete(jobPosition);
-		return new SuccessResult("Job position has been deleted");
-	}
+//	@Override
+//	public Result update(JobPosition jobPosition) {
+//		this.jobPositionDao.save(jobPosition );
+//		return new SuccessResult("Job position has been updated");
+//	}
+//
+//	@Override
+//	public Result delete(JobPosition jobPosition) {
+//		this.jobPositionDao.delete(jobPosition);
+//		return new SuccessResult("Job position has been deleted");
+//	}
 
 	@Override
 	public DataResult<JobPosition> getByJobTitle(String jobTitle) {
