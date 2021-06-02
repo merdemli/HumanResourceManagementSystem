@@ -15,7 +15,6 @@ import lombok.NoArgsConstructor;
 @Table(name = "jobseekers")
 @Data
 @PrimaryKeyJoinColumn(name = "user_id")
-@AllArgsConstructor
 @NoArgsConstructor
 public class JobSeeker extends User {
 	
@@ -33,11 +32,19 @@ public class JobSeeker extends User {
 	@Column(name = "national_id")
 	private String nationalId;
 	
+
 	@Column(name = "date_of_birth")
 	private LocalDate dateOfBirth;
 	
 	@Column(name = "is_verified",columnDefinition  = "boolean default false")
 	private boolean isVerified = false;
 	
-
+	public JobSeeker(String firstName, String lastName, String nationalId, LocalDate dateOfBirth) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.nationalId = nationalId;
+		this.dateOfBirth = dateOfBirth;
+	}
+	
 }
