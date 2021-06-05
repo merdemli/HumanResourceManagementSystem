@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import io.hrms.business.abstracts.JobPositionService;
 import io.hrms.core.utilities.results.DataResult;
 import io.hrms.core.utilities.results.Result;
+import io.hrms.entities.concretes.JobAdvert;
 import io.hrms.entities.concretes.JobPosition;
 
 @RestController
@@ -36,6 +37,8 @@ public class JobPositionsController
 		
 		return this.jobPositionService.add(jobPosition);
 	}
+	
+	
 	
 	
 	

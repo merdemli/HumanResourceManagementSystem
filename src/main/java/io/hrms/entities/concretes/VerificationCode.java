@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -34,9 +36,11 @@ public class VerificationCode {
 	private boolean isConfirmed =false;
 	
 	@Column(name = "created_at", columnDefinition = "Date default CURRENT_DATE")
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
 	private LocalDate createdAt = LocalDate.now();
 	
 	@Column(name = "activation_date")
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
 	private LocalDate activationDate;
 
 }

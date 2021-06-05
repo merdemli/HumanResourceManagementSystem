@@ -1,6 +1,7 @@
 package io.hrms.entities.concretes;
 
-import java.util.Date;
+import java.sql.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +11,11 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -37,13 +43,18 @@ public class JobAdvert {
 //	private int employerId;
 //	
 	@Column(name = "description")
+	@NotNull
+	@NotBlank
 	private String description;
 	
 	@Column(name = "open_position_count")
+	@NotNull
+	@NotBlank
 	private int openPositionCount;
 	
 	@Column(name = "deadline")
-	private Date deadline;
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+	private LocalDate deadline;
 	
 	@Column(name = "salary_min")
 	private int salaryMin;
@@ -51,11 +62,13 @@ public class JobAdvert {
 	@Column(name = "salary_max")
 	private int salaryMax;
 	
-	@Column(name = "is_open")
-	private boolean isOpen;
+	@Column(name = "advert_status")
+	private boolean advertStatus;
 	
-	@Column(name = "created_at")
-	private Date createdAt;
+	@JsonIgnore
+	@Column(name = "created_at", columnDefinition = "Date default CURRENT_DATE")
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+	private LocalDate createdAt = LocalDate.now();
 	
 	@Column(name = "is_active")
 	private boolean isActive;
