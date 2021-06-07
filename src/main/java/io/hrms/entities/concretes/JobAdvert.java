@@ -26,8 +26,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class JobAdvert {
+public class JobAdvert extends Base {
 	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
@@ -64,17 +65,6 @@ public class JobAdvert {
 	
 	@Column(name = "advert_status")
 	private boolean advertStatus;
-	
-	@JsonIgnore
-	@Column(name = "created_at", columnDefinition = "Date default CURRENT_DATE")
-	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-	private LocalDate createdAt = LocalDate.now();
-	
-	@Column(name = "is_active")
-	private boolean isActive;
-	
-	@Column(name = "is_deleted")
-	private boolean isDeleted;
 	
 	@ManyToOne()
 	@JoinColumn(name = "city_id")

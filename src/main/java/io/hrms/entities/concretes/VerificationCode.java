@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class VerificationCode {
+public class VerificationCode extends Base{
 	
 	@Id
 	@GeneratedValue
@@ -35,10 +35,7 @@ public class VerificationCode {
 	@Column(name = "is_confirmed",columnDefinition  = "boolean default false")
 	private boolean isConfirmed =false;
 	
-	@Column(name = "created_at", columnDefinition = "Date default CURRENT_DATE")
-	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-	private LocalDate createdAt = LocalDate.now();
-	
+
 	@Column(name = "activation_date")
 	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
 	private LocalDate activationDate;
