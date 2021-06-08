@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -25,12 +27,12 @@ public class WorkExperienceForCV extends Base{
 	@Column(name = "id")
 	private int id;
 	
-	@Column(name = "cv_id")
-	private int cv_id;
+//	@Column(name = "cv_id")
+//	private int cv_id;
 	
-	@Column(name = "job_position_id")
-	private int jobPositionId;
-	
+//	@Column(name = "job_position_id")
+//	private int jobPositionId;
+//	
 	@Column(name = "company_name")
 	private String companyName;
 	
@@ -40,7 +42,12 @@ public class WorkExperienceForCV extends Base{
 	@Column(name = "ending_date",nullable = true)
 	private LocalDate endingDate;
 	
+	@ManyToOne
+	@JoinColumn(name = "cv_id")
+	private CV cv;
 	
-	
+	@ManyToOne
+	@JoinColumn(name = "job_position_id")
+	private JobPosition jobPosition;
 
 }

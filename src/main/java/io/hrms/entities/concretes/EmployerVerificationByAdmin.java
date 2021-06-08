@@ -32,6 +32,7 @@ public class EmployerVerificationByAdmin extends Base{
 	@Column(name = "verification_status" ,columnDefinition = "boolean default false")
 	private boolean verificationStatus = false;
 	
+
 	
 	
 

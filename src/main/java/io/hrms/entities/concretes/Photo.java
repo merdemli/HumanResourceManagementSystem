@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -29,5 +31,8 @@ public class Photo extends Base{
 	@Column(name = "photo_url")
 	private String photoURL;
 	
+	@ManyToOne
+	@JoinColumn(name = "cv_id")
+	private CV cv;
 
 }

@@ -5,8 +5,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -14,6 +19,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Table(name ="cv_cover_letters")
 @NoArgsConstructor
+@AllArgsConstructor
 public class CoverLetterForCV extends Base{
 	
 	@Id
@@ -21,17 +27,20 @@ public class CoverLetterForCV extends Base{
 	@Column(name = "id")
 	private int id;
 	
-	@Column(name = "cv_id")
-	private int cvId;
+//	@Column(name = "cv_id")
+/// private int cvId;
 	
 	@Column(name = "content")
 	private String content;
 	
-	public CoverLetterForCV(int id, int cv_id, String content) {
-		super();
-		this.id = id;
-		this.cvId = cv_id;
-		this.content = content;
-	}
+	
+	
+	@ManyToOne
+	@JoinColumn(name = "cv_id")
+	private CV cv;
+	
+	
+	
+	
 	
 }

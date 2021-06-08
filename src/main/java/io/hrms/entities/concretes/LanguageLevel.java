@@ -1,10 +1,13 @@
 package io.hrms.entities.concretes;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -23,7 +26,10 @@ public class LanguageLevel extends Base{
 	@Column(name = "id")
 	private int id;
 	
-	@Column(name = "lever_name")
+	@Column(name = "level_name")
 	private String levelName;
+	
+	@OneToMany(mappedBy ="languageLevel")
+	List<ForeignLanguageForCv>foreignLanguagesForCv;
 	
 }

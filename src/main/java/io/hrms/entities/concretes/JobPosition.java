@@ -39,7 +39,8 @@ public class JobPosition extends Base{
 	@OneToMany(mappedBy = "jobPosition")
 	private List<JobAdvert>jobAdverts;
 	
-	
+	@OneToMany(mappedBy = "jobPosition")
+	private List<WorkExperienceForCV>workExperiences;
 	
 }
  

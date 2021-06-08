@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -23,14 +25,21 @@ public class SocialMediaForCV extends Base{
 	@Column(name = "id")
 	private int id;
 	
-	@Column(name = "social_media_id")
-	private int socialMediaId;
+//	@Column(name = "social_media_id")
+//	private int socialMediaId;
 	
-	@Column(name = "cv_id")
-	private int cvId;
+//	@Column(name = "cv_id")
+//	private int cvId;
 	
 	@Column(name = "link")
 	private String link;
-		
+	
+	@ManyToOne
+	@JoinColumn(name = "social_media_id")
+	private SocialMedia socialMedia;
 
+	@ManyToOne
+	@JoinColumn(name = "cv_id")
+	private CV cv;
+	
 }
