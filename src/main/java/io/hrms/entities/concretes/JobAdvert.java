@@ -78,5 +78,6 @@ public class JobAdvert extends Base {
 	@JoinColumn(name = "job_position_id")
 	private JobPosition jobPosition;
 	
+	
 
 }
