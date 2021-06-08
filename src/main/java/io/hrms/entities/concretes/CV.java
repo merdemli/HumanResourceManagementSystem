@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -28,26 +30,37 @@ public class CV extends Base{
 	@Column(name = "id")
 	private int id;
 	
-	@Column(name = "job_seeker_id")
-	private int jobSeekerId;
+//	@Column(name = "job_seeker_id")
+//	private int jobSeekerId;
+	
+	@ManyToOne
+	@JoinColumn(name="job_seeker_id")
+	private JobSeeker jobSeeker;
+	
 	
 	@OneToMany(mappedBy ="cv")
 	List<CoverLetterForCV>coverLetters;
 	
+	
 	@OneToMany(mappedBy = "cv")
 	List<EducationInfoForCV>educationInfos;
+	
 	
 	@OneToMany(mappedBy = "cv")
 	List<ForeignLanguageForCv>foreignLanguages;
 	
+	
 	@OneToMany(mappedBy = "cv")
 	List<Photo>photos;
+	
 	
 	@OneToMany(mappedBy = "cv")
 	List<SocialMediaForCV>socialMediaForCv;
 	
+	
 	@OneToMany(mappedBy = "cv")
 	List<TechnologyForCV>tecnologiesForCv;
+	
 	
 	@OneToMany(mappedBy = "cv")
 	List<WorkExperienceForCV>workexperiencies;
