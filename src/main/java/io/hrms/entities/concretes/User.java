@@ -34,9 +34,8 @@ public class User extends Base{
 	@Column(name = "id")
 	private int id;
 
-	
+	@Email(message = "Email should be valid")
 	@Column(name = "email")
-	@Email
 	@NotNull
 	@NotBlank
 	private String email;
