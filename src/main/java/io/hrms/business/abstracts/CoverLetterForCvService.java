@@ -13,5 +13,6 @@ public interface CoverLetterForCvService {
 	Result delete(int id); 
 	DataResult<List<CoverLetterForCV>>getAll();
 	DataResult<CoverLetterForCV>getById(int id);
+	//DataResult<List<CoverLetterForCV>>getallByCVId(int id);
 
 }
