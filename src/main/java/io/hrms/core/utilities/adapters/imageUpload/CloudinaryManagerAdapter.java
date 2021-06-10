@@ -44,9 +44,6 @@ public class CloudinaryManagerAdapter implements CloudinaryService {
 			return new ErrorDataResult<Map>();
 		}
 
-		
-		
-		
 	}
 
 	
