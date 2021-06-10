@@ -55,4 +55,10 @@ public class CoverLetterForCvManager implements CoverLetterForCvService{
 		return new SuccessDataResult<CoverLetterForCV>(this.coverLetterForCVDao.getById(id));
 	}
 
+//	@Override
+//	public DataResult<List<CoverLetterForCV>> getallByCVId(int id) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+
 }

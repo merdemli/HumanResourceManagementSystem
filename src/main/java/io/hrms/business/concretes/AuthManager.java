@@ -8,7 +8,7 @@ import io.hrms.business.abstracts.AuthService;
 import io.hrms.business.abstracts.EmployerService;
 import io.hrms.business.abstracts.JobSeekerService;
 import io.hrms.business.abstracts.UserService;
-import io.hrms.core.utilities.adapters.ValidatePersonService;
+import io.hrms.core.utilities.adapters.mernis.ValidatePersonService;
 import io.hrms.core.utilities.results.ErrorDataResult;
 import io.hrms.core.utilities.results.ErrorResult;
 import io.hrms.core.utilities.results.Result;

@@ -7,7 +7,9 @@ import org.springframework.stereotype.Service;
 
 import io.hrms.business.abstracts.CVService;
 import io.hrms.core.utilities.results.DataResult;
+import io.hrms.core.utilities.results.Result;
 import io.hrms.core.utilities.results.SuccessDataResult;
+import io.hrms.core.utilities.results.SuccessResult;
 import io.hrms.dataAccess.abstracts.CVDao;
 import io.hrms.entities.concretes.CV;
 
@@ -29,6 +31,38 @@ public class CVManager implements CVService {
 	public DataResult<List<CV>> getByJobSeekerId(int userId) {
 		
 		return new SuccessDataResult<List<CV>>(this.cvDao.getByJobSeekerId(userId) , "geldi");
+	}
+
+
+
+	@Override
+	public Result add(CV cv) {
+		this.cvDao.save(cv);
+		return new SuccessResult("cv added to system");
+	}
+
+
+
+	@Override
+	public Result update(CV cv) {
+		this.cvDao.save(cv);
+		return new SuccessResult("cv added to system");
+	}
+
+
+
+	@Override
+	public Result delete(int id) {
+		this.cvDao.deleteById(id);
+		return new SuccessResult("cv deleted to system");
+	}
+
+
+
+	@Override
+	public DataResult<List<CV>> getAll() {
+		
+		return new SuccessDataResult<List<CV>>(this.cvDao.findAll(), "All CVs listed");
 	}
 
 }
