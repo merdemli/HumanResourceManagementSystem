@@ -25,8 +25,8 @@ public class Photo extends Base{
 	@Column(name = "id")
 	private int id;
 	
-	@Column(name = "cv_id")
-	private int cvId;
+//	@Column(name = "cv_id")
+//	private int cvId;
 	
 	@Column(name = "photo_url")
 	private String photoURL;

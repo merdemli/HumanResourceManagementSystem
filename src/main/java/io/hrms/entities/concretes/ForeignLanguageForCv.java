@@ -8,8 +8,13 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -44,10 +49,17 @@ public class ForeignLanguageForCv extends Base{
 	@ManyToOne()
 	@JoinColumn(name = "foreign_language_id")
 	private ForeignLanguage foreignLanguage;
+	
+	@Column(name = "level")
+	@Min(value = 1)
+	@Max(value = 5)
+	@NotBlank
+	@NotNull
+	private int level;
 
-	@ManyToOne
-	@JoinColumn(name = "language_level_id")
-	private LanguageLevel languageLevel;
+//	@ManyToOne
+//	@JoinColumn(name = "language_level_id")
+//	private LanguageLevel languageLevel;
 	
 	
 	

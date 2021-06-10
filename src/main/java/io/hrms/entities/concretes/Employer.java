@@ -47,6 +47,6 @@ public class Employer extends User {
 	private String companyName;
 
 	@OneToMany(mappedBy = "employer")
-	@JsonIgnore
+	
 	private List<JobAdvert>jobAdverts;
 }

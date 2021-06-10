@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -45,6 +47,7 @@ public class WorkExperienceForCV extends Base{
 	@ManyToOne
 	@JoinColumn(name = "cv_id")
 	private CV cv;
+	
 	
 	@ManyToOne
 	@JoinColumn(name = "job_position_id")

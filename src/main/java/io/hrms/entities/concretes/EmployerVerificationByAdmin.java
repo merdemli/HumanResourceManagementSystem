@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@Table(name = "employers_verification_byAdmins")
+@Table(name = "employers_verification_by_admins")
 @AllArgsConstructor
 @NoArgsConstructor
 public class EmployerVerificationByAdmin extends Base{

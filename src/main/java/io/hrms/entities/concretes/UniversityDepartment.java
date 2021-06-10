@@ -26,9 +26,7 @@ public class UniversityDepartment extends Base{
 	@Column(name = "id")
 	private int id;
 	
-	@Column(name = "university_id")
-	private int universityId;
-	
+
 	@Column(name = "university_department_name")
 	private String universityDepartmentName;
 	

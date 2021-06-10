@@ -1,9 +1,11 @@
 package io.hrms.entities.concretes;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
@@ -16,6 +18,7 @@ import lombok.NoArgsConstructor;
 @Data
 @PrimaryKeyJoinColumn(name = "user_id")
 @NoArgsConstructor
+
 public class JobSeeker extends User {
 	
 //	@Id
@@ -37,6 +40,9 @@ public class JobSeeker extends User {
 	
 	@Column(name = "is_verified",columnDefinition  = "boolean default false")
 	private boolean isVerified = false;
+	
+	@OneToMany(mappedBy = "jobSeeker")
+	private List<CV> cvs;
 	
 	public JobSeeker(String firstName, String lastName, String nationalId, LocalDate dateOfBirth) {
 		super();

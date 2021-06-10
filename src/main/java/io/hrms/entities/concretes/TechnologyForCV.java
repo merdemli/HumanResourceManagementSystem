@@ -34,7 +34,7 @@ public class TechnologyForCV extends Base {
 	
 	@ManyToOne
 	@JoinColumn(name = "technology_id")
-	private Technology technologies;
+	private Technology technology;
 	
 	@ManyToOne
 	@JoinColumn(name = "cv_id")
