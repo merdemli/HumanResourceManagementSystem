@@ -9,35 +9,37 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.hrms.business.abstracts.CVService;
+import io.hrms.business.abstracts.PhotoService;
 import io.hrms.core.utilities.results.DataResult;
 import io.hrms.core.utilities.results.Result;
-import io.hrms.entities.concretes.CV;
-import io.hrms.entities.concretes.City;
-import io.hrms.entities.concretes.JobAdvert;
+import io.hrms.entities.concretes.ForeignLanguageForCv;
+import io.hrms.entities.concretes.Photo;
+
 
 @RestController
-@RequestMapping("/api/cvs")
-public class CVsController  {
+@RequestMapping("/api/photos")
+public class PhotosController {
 	
-	private CVService cvService;
+	private PhotoService photoService;
 
 	@Autowired
-	public CVsController(CVService cvService) {
+	public PhotosController(PhotoService photoService) {
 		super();
-		this.cvService = cvService;
-	}
-	
-	@GetMapping("/getByJobSeekerId")
-	public DataResult<List<CV>> getByJobSeekerId(int userId){
-		return this.cvService.getByJobSeekerId(userId);
+		this.photoService = photoService;
 	}
 	
 	@PostMapping("/add")
-	Result add(@RequestBody CV cv) {
-		return this.cvService.add(cv);
+	Result add(@RequestBody Photo photo) {
+		return this.photoService.add(photo);
 	}
+	
+	@GetMapping("/getAll")
+	DataResult<List<Photo>>getAll(){
+		return this.photoService.getAll();}
+	
+	
 	
 	
 
+		
 }

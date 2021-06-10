@@ -49,6 +49,10 @@ public class CoverLettersController {
 	public DataResult<CoverLetterForCV>getById(@RequestParam("id") int id){
 		return this.coverLetterForCvService.getById(id);
 	
-	}}
+	}
 	
+	}
+
+
+
 

@@ -9,35 +9,33 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.hrms.business.abstracts.CVService;
+import io.hrms.business.abstracts.EducationInfoForCVService;
 import io.hrms.core.utilities.results.DataResult;
 import io.hrms.core.utilities.results.Result;
 import io.hrms.entities.concretes.CV;
-import io.hrms.entities.concretes.City;
+import io.hrms.entities.concretes.EducationInfoForCV;
 import io.hrms.entities.concretes.JobAdvert;
 
 @RestController
-@RequestMapping("/api/cvs")
-public class CVsController  {
+@RequestMapping("/api/educationsforcv")
+public class EducationsForCvController {
 	
-	private CVService cvService;
-
+	private EducationInfoForCVService educationInfoForCVService;
+	
 	@Autowired
-	public CVsController(CVService cvService) {
+	public EducationsForCvController(EducationInfoForCVService educationInfoForCVService) {
 		super();
-		this.cvService = cvService;
+		this.educationInfoForCVService = educationInfoForCVService;
 	}
-	
-	@GetMapping("/getByJobSeekerId")
-	public DataResult<List<CV>> getByJobSeekerId(int userId){
-		return this.cvService.getByJobSeekerId(userId);
-	}
-	
+
 	@PostMapping("/add")
-	Result add(@RequestBody CV cv) {
-		return this.cvService.add(cv);
+	Result add(@RequestBody EducationInfoForCV educationForCv) {
+		return this.educationInfoForCVService.add(educationForCv);
 	}
 	
-	
+	@GetMapping("/getAll")
+	DataResult<List<EducationInfoForCV>>getAll(){
+		return this.educationInfoForCVService.getAll();	}
 
 }
+
