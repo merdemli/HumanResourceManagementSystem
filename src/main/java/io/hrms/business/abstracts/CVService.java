@@ -8,12 +8,13 @@ import io.hrms.entities.concretes.CV;
 
 
 public interface CVService {
+	
 	Result add(CV cv);
 	Result update(CV cv); 
 	Result delete(int id); 
 	DataResult<List<CV>>getAll();
-
 	DataResult<List<CV>>getByJobSeekerId(int userId );
+	DataResult<CV>getById(int id);
 
 }
 

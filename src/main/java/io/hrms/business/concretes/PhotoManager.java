@@ -1,11 +1,14 @@
 package io.hrms.business.concretes;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import io.hrms.business.abstracts.PhotoService;
+import io.hrms.core.utilities.adapters.imageUpload.CloudinaryService;
 import io.hrms.core.utilities.results.DataResult;
 import io.hrms.core.utilities.results.Result;
 import io.hrms.core.utilities.results.SuccessDataResult;
@@ -16,19 +19,24 @@ import io.hrms.entities.concretes.Photo;
 @Service
 public class PhotoManager implements PhotoService{
 	
-	@Autowired
+	
 	private PhotoDao photoDao;
+	private CloudinaryService cloudinaryService;
 	
-	
-	public PhotoManager(PhotoDao photoDao) {
+	@Autowired
+	PhotoManager(PhotoDao photoDao, CloudinaryService cloudinaryService) {
 		super();
 		this.photoDao = photoDao;
+		this.cloudinaryService = cloudinaryService;
 	}
 
+	
 	@Override
-	public Result add(Photo photo) {
+	public Result add(Photo photo, MultipartFile imageFile) {
+		Map<String,String> uploadImage = this.cloudinaryService.uploadImageFile(imageFile).getData();
+		photo.setPhotoURL(uploadImage.get("url"));
 		this.photoDao.save(photo);
-		return new SuccessResult("photo added");
+		return new SuccessResult("Image has been added.");
 	}
 
 	@Override
@@ -46,7 +54,7 @@ public class PhotoManager implements PhotoService{
 	@Override
 	public DataResult<List<Photo>> getAll() {
 		
-		return new SuccessDataResult<List<Photo>>(this.photoDao.findAll());
+		return new SuccessDataResult<List<Photo>>(this.photoDao.findAll(), "images listed");
 	}
 
 	@Override
