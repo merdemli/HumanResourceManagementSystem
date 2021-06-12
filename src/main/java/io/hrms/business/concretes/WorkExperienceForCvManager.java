@@ -13,6 +13,7 @@ import io.hrms.core.utilities.results.SuccessResult;
 import io.hrms.dataAccess.abstracts.WorkExperienceForCVDao;
 import io.hrms.entities.concretes.JobSeeker;
 import io.hrms.entities.concretes.WorkExperienceForCV;
+import io.hrms.entities.dtos.WorkExperienceWithCvWithJobSeekerDto;
 
 
 @Service
@@ -56,4 +57,12 @@ public class WorkExperienceForCvManager implements WorkExperienceForCvService {
 		return null;
 	}
 
+
+	@Override
+	public DataResult<List<WorkExperienceWithCvWithJobSeekerDto>> getWorkExperienceWitCvWithJobSeekerDto(int userId) {
+		
+		return new SuccessDataResult<List<WorkExperienceWithCvWithJobSeekerDto>>(this.workExperienceForCVDao.getWorkExperienceWithCvWithJobSeekerDetails(userId));
+	}
+
+	
 }
