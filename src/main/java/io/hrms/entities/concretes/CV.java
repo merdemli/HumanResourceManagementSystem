@@ -33,37 +33,38 @@ public class CV extends Base{
 //	@Column(name = "job_seeker_id")
 //	private int jobSeekerId;
 	
+	
 	@ManyToOne
 	@JoinColumn(name="job_seeker_id")
 	private JobSeeker jobSeeker;
 	
-	
+	@JsonIgnore
 	@OneToMany(mappedBy ="cv")
 	List<CoverLetterForCV>coverLetters;
 	
-	
+	@JsonIgnore
 	@OneToMany(mappedBy = "cv")
 	List<EducationInfoForCV>educationInfos;
 	
-	
+	@JsonIgnore
 	@OneToMany(mappedBy = "cv")
 	List<ForeignLanguageForCv>foreignLanguages;
 	
-	
+	@JsonIgnore
 	@OneToMany(mappedBy = "cv")
 	List<Photo>photos;
 	
-	
+	@JsonIgnore
 	@OneToMany(mappedBy = "cv")
 	List<SocialMediaForCV>socialMediaForCv;
 	
-	
+	@JsonIgnore
 	@OneToMany(mappedBy = "cv")
-	List<TechnologyForCV>tecnologiesForCv;
+	List<TechnologyForCV>technologiesForCv;
 	
-	
+	@JsonIgnore
 	@OneToMany(mappedBy = "cv")
-	List<WorkExperienceForCV>workexperiencies;
+	List<WorkExperienceForCV>workExperiencies;
 }
 
 

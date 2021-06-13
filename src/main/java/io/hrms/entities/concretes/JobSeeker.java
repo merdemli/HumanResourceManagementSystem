@@ -8,6 +8,10 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,7 +22,7 @@ import lombok.NoArgsConstructor;
 @Data
 @PrimaryKeyJoinColumn(name = "user_id")
 @NoArgsConstructor
-
+@AllArgsConstructor
 public class JobSeeker extends User {
 	
 //	@Id
@@ -33,9 +37,12 @@ public class JobSeeker extends User {
 	private String lastName;
 	
 	@Column(name = "national_id")
+	@NotNull
+	@NotBlank
 	private String nationalId;
 	
 	@Column(name = "date_of_birth")
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
 	private LocalDate dateOfBirth;
 	
 	@Column(name = "is_verified",columnDefinition  = "boolean default false")
@@ -44,12 +51,6 @@ public class JobSeeker extends User {
 	@OneToMany(mappedBy = "jobSeeker")
 	private List<CV> cvs;
 	
-	public JobSeeker(String firstName, String lastName, String nationalId, LocalDate dateOfBirth) {
-		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.nationalId = nationalId;
-		this.dateOfBirth = dateOfBirth;
-	}
+	
 	
 }

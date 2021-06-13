@@ -30,7 +30,7 @@ public class WorkExperienceForCV extends Base{
 	private int id;
 	
 //	@Column(name = "cv_id")
-//	private int cv_id;
+//	private int cvId;
 	
 //	@Column(name = "job_position_id")
 //	private int jobPositionId;
@@ -47,7 +47,6 @@ public class WorkExperienceForCV extends Base{
 	@ManyToOne
 	@JoinColumn(name = "cv_id")
 	private CV cv;
-	
 	
 	@ManyToOne
 	@JoinColumn(name = "job_position_id")
