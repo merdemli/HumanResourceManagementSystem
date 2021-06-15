@@ -38,11 +38,14 @@ public class EducationInfoForCV extends Base {
 //	@Column(name = "cv_id")
 //	private int cvId;
 	
-	@Column(name = "starting_date")
+	@Column(name = "starting_date") 
 	private LocalDate startingDate;
 	
 	@Column(name = "graduation_date", nullable = true)
 	private LocalDate graduationDate;
+	
+	@Column(name = "is_still_studying")
+	private String isStillStudying;
 	
 	@ManyToOne
 	@JoinColumn(name = "cv_id")
