@@ -13,6 +13,8 @@ import io.hrms.core.utilities.results.SuccessResult;
 import io.hrms.dataAccess.abstracts.EducationInfoForCVDao;
 import io.hrms.entities.concretes.CoverLetterForCV;
 import io.hrms.entities.concretes.EducationInfoForCV;
+import io.hrms.entities.concretes.WorkExperienceForCV;
+import io.hrms.entities.dtos.EducationInfoForCvWithUniversityAndUniversityDepartmentDto;
 
 @Service
 public class EducationInfoForCVManager implements EducationInfoForCVService{
@@ -27,10 +29,16 @@ public class EducationInfoForCVManager implements EducationInfoForCVService{
 	
 	
 
+	
 	@Override
 	public Result add(EducationInfoForCV educationInfoForCV) {
 		this.educationInfoForCVDao.save(educationInfoForCV);
-		return new SuccessResult("Education info have been added");
+		if (String.valueOf(educationInfoForCV.getGraduationDate()).isEmpty()) {
+			educationInfoForCV.setIsStillStudying("continues");
+		     return new SuccessResult("Education Information  have been added");}
+		else {
+			return new SuccessResult("Education Information have been added");
+		}
 	}
 
 	@Override
@@ -66,7 +74,10 @@ public class EducationInfoForCVManager implements EducationInfoForCVService{
 //		return new SuccessDataResult<List<EducationInfoForCV>>(this.educationInfoForCVDao.getAllByCV_id(id)," listed by cv id");
 //	}
 
-
+	@Override
+	public DataResult<List<EducationInfoForCvWithUniversityAndUniversityDepartmentDto>> getEducationInfoForCvWithUniversityAndUniversityDepartment(int userId) {
+		return new SuccessDataResult<List<EducationInfoForCvWithUniversityAndUniversityDepartmentDto >>(this.educationInfoForCVDao.getEducationInfoForCvWithUniversityAndUniversityDepartment(userId));
+	}
 
 	
 
