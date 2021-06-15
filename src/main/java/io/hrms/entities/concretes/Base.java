@@ -29,7 +29,7 @@ public class Base {
 	@Column(name = "isActive", columnDefinition = "boolean default true")
 	private boolean isActive = true;
 	
-	@Column(name = "isDeleted", columnDefinition = "boolean default true")
+	@Column(name = "isDeleted", columnDefinition = "boolean default false")
 	private boolean isDeleted = false;
 	
 	

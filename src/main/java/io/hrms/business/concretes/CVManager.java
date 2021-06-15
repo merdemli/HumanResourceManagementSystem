@@ -12,6 +12,7 @@ import io.hrms.core.utilities.results.SuccessDataResult;
 import io.hrms.core.utilities.results.SuccessResult;
 import io.hrms.dataAccess.abstracts.CVDao;
 import io.hrms.entities.concretes.CV;
+import io.hrms.entities.dtos.CVDto;
 
 @Service
 public class CVManager implements CVService {
@@ -73,5 +74,14 @@ public class CVManager implements CVService {
 		return new SuccessDataResult<CV>(this.cvDao.getById(id));
 
 	}
+	
+//	public DataResult<CVDto>getCVByJobSeekerId(int id){
+//		
+//		CVDto cv = new CVDto();
+//		
+//		
+//		
+//		
+//	}
 
 }

@@ -3,6 +3,8 @@ package io.hrms.business.concretes;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,7 +36,7 @@ public class JobSeekerManager implements JobSeekerService {
 	}
 
 	@Override
-	public Result add(JobSeeker jobSeeker) {
+	public Result add(@Valid JobSeeker jobSeeker) {
 		this.jobSeekerDao.save(jobSeeker);
 		
 		return new SuccessResult("saved to DB");
