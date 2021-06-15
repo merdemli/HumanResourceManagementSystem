@@ -36,7 +36,7 @@ public class JobSeekerManager implements JobSeekerService {
 	}
 
 	@Override
-	public Result add(@Valid JobSeeker jobSeeker) {
+	public Result add(JobSeeker jobSeeker) {
 		this.jobSeekerDao.save(jobSeeker);
 		
 		return new SuccessResult("saved to DB");
