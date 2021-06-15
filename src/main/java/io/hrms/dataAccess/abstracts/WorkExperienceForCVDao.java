@@ -14,7 +14,7 @@ public interface WorkExperienceForCVDao extends JpaRepository<WorkExperienceForC
 	
 	
 	@Query("Select new io.hrms.entities.dtos.WorkExperienceWithCvWithJobSeekerDto("
-            +" w.id, w.companyName, w.startingDate, w.endingDate, p.jobTitle, j.firstName, j.lastName) "
+            +" w.id, w.companyName, w.startingDate, w.endingDate,w.isStillWorking, p.jobTitle, j.firstName, j.lastName) "
             +" From WorkExperienceForCV w Inner Join CV c ON w.cv.id  =c.id "
             +" Inner Join JobSeeker j ON w.cv.jobSeeker.id= j.id"
             +" Inner Join JobPosition p ON w.jobPosition.id =p.id "

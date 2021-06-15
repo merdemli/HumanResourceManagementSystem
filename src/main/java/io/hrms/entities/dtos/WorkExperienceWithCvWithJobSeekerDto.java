@@ -15,6 +15,7 @@ public class WorkExperienceWithCvWithJobSeekerDto {
 	private String companyName;
 	private LocalDate startingDate;
 	private LocalDate endingDate;
+	private String isStillWorking;
 	private String jobTitle;
 	private String jobSeekerFirstName;
 	private String jobSeekerLastName;

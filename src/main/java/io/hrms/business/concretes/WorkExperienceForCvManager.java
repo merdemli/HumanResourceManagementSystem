@@ -30,7 +30,12 @@ public class WorkExperienceForCvManager implements WorkExperienceForCvService {
 	@Override
 	public Result add(WorkExperienceForCV workExperinceForCV) {
 		this.workExperienceForCVDao.save(workExperinceForCV);
-		return new SuccessResult("It has been successfully added");
+		if (String.valueOf(workExperinceForCV.getEndingDate()).isEmpty()) {
+			workExperinceForCV.setIsStillWorking("continues");
+		     return new SuccessResult("Work Experience have been added");}
+		else {
+			return new SuccessResult("Work Experience have been added");
+		}
 	}
 
 	@Override
