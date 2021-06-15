@@ -12,7 +12,7 @@ import io.hrms.core.utilities.results.SuccessDataResult;
 import io.hrms.core.utilities.results.SuccessResult;
 import io.hrms.dataAccess.abstracts.CVDao;
 import io.hrms.entities.concretes.CV;
-import io.hrms.entities.dtos.CVDto;
+
 
 @Service
 public class CVManager implements CVService {
@@ -31,7 +31,7 @@ public class CVManager implements CVService {
 	@Override
 	public DataResult<List<CV>> getByJobSeekerId(int userId) {
 		
-		return new SuccessDataResult<List<CV>>(this.cvDao.getByJobSeekerId(userId) , "geldi");
+		return new SuccessDataResult<List<CV>>(this.cvDao.getByJobSeekerId(userId) , "all infos for cv listed");
 	}
 
 
