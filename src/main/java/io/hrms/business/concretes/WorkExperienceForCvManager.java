@@ -64,7 +64,7 @@ public class WorkExperienceForCvManager implements WorkExperienceForCvService {
 
 
 	@Override
-	public DataResult<List<WorkExperienceWithCvWithJobSeekerDto>> getWorkExperienceWitCvWithJobSeekerDto(int userId) {
+	public DataResult<List<WorkExperienceWithCvWithJobSeekerDto>> getWorkExperienceWithCvWithJobSeekerDetails(int userId) {
 		
 		return new SuccessDataResult<List<WorkExperienceWithCvWithJobSeekerDto>>(this.workExperienceForCVDao.getWorkExperienceWithCvWithJobSeekerDetails(userId));
 	}

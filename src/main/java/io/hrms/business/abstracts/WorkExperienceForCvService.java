@@ -17,5 +17,5 @@ public interface WorkExperienceForCvService {
 	DataResult<WorkExperienceForCV>getById(int id);
 	//DataResult<List<WorkExperienceForCV>>getAllByCVId(int id);
 	
-	DataResult<List<WorkExperienceWithCvWithJobSeekerDto>>getWorkExperienceWitCvWithJobSeekerDto(int userId);
+	DataResult<List<WorkExperienceWithCvWithJobSeekerDto>>getWorkExperienceWithCvWithJobSeekerDetails(int userId);
 }

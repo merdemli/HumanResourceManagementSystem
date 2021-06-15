@@ -14,6 +14,7 @@ import io.hrms.core.utilities.results.DataResult;
 import io.hrms.core.utilities.results.Result;
 import io.hrms.entities.concretes.Photo;
 import io.hrms.entities.concretes.WorkExperienceForCV;
+import io.hrms.entities.dtos.WorkExperienceWithCvWithJobSeekerDto;
 
 @RestController
 @RequestMapping("/api/workexperiences")
@@ -36,6 +37,9 @@ public class WorkExperiencesController {
 	DataResult<List<WorkExperienceForCV>>getAll(){
 		return this.workExperienceForCvService.getAll();}
 	
-	
+	@GetMapping("/getWorkExperienceWitCvWithJobSeeker")
+	DataResult<List<WorkExperienceWithCvWithJobSeekerDto>>getWorkExperienceWithCvWithJobSeekerDetails(int userId){
+		return this.workExperienceForCvService.getWorkExperienceWithCvWithJobSeekerDetails(userId);}
 
 }
+
