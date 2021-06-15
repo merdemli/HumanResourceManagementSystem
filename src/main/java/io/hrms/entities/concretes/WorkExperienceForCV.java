@@ -44,6 +44,9 @@ public class WorkExperienceForCV extends Base{
 	@Column(name = "ending_date",nullable = true)
 	private LocalDate endingDate;
 	
+	@Column(name = "is_still_working")
+	private String isStillWorking;
+	
 	@ManyToOne
 	@JoinColumn(name = "cv_id")
 	private CV cv;
