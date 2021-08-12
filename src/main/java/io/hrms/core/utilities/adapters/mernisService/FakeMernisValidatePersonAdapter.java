@@ -2,10 +2,8 @@ package io.hrms.core.utilities.adapters.mernisService;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
-
 import io.hrms.entities.concretes.JobSeeker;
-import io.hrms.fakeMernisService.FakeMernisValidationService;
+import io.hrms.outSourceServices.fakeMernisService.FakeMernisValidationService;
 
 @Component
 @Primary
@@ -20,7 +18,7 @@ public class FakeMernisValidatePersonAdapter implements ValidatePersonService{
            result = true;
 		   return result;
 
-	
+	//simulation
 
 }
 }
