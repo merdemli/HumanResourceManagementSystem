@@ -46,7 +46,7 @@ public class EmailSendManagerAdapter implements EmailSendService {
 		 mailSenderManager.sendSimpleMessage(mail);
 		 
 		 
-		return new SuccessResult("Email have already sent");
+		return new SuccessResult("Email  sent");
 	}
 
 	
