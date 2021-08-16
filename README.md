@@ -149,6 +149,10 @@ Java.SpringBoot- Backend for Human Resource Management System
 
 ## :toolbox: Kullanılan Teknolojiler 
 
+<summary><strong><i> Maven Project </i></strong></summary>
+
+---
+
 <summary><strong><i> Lombok </i></strong></summary>
 
 --- 
