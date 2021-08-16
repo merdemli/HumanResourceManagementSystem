@@ -177,6 +177,8 @@ Java.SpringBoot- Backend for Human Resource Management System
 
 ---
 
+<summary><strong><i> Java Mail Sender</i></strong></summary>
+
 
 - `PostgreSql` &emsp;&emsp;&emsp;&emsp;&emsp;`Spring Data JPA`&emsp;&emsp;&emsp;&emsp;&emsp; `Spring Hibernate Validator`
 <br> <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg" width="75" height="75"/>&emsp;&emsp;&emsp;&emsp;&emsp;<img src="https://raw.githubusercontent.com/ippontech/blog-usa/master/images/2017/11/boot-data.png" width="150" height="75"/>&emsp;&emsp;&emsp;&emsp;&emsp;<img src="https://hibernate.org/images/hibernate-logo.svg" width="150" height="75"/>
